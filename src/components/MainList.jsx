@@ -11,3 +11,7 @@ function MainList(){
 }
 
 export default MainList;
+
+/* Features
+Press Enter to create new Task
+*/
