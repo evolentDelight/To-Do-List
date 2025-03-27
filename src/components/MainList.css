@@ -1,0 +1,19 @@
+textarea {
+  color: white;
+  background-color: #205295;
+  border-color: white;
+
+  font-size: 1.5rem;
+
+  width: 60vw;
+
+  resize: none;
+
+  display: list-item;
+
+  margin-bottom: 2vh;
+}
+
+li::marker{
+  font-size: 3rem;
+}

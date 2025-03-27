@@ -9,7 +9,7 @@ function ToDo(){
 
   return(
     <li>
-      <input type="text" value={task} onChange={handleChange}/>
+      <textarea value={task} rows={2} onChange={handleChange}/>
     </li>
   )
 }
