@@ -5,11 +5,11 @@ import ToDo from "./ToDo.jsx"
 function MainList(){
   const [toDoList, setToDoList] = useState([<ToDo/>]);
   return(
-    <ul>
+    <div className='todo-list-container'>
       {toDoList}
       <ToDo/>
       <ToDo/>
-    </ul>
+    </div>
   )
 }
 
