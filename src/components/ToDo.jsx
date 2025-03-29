@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DeleteButton from "./DeleteButton.jsx"
 import "./ToDo.css"
 
 function ToDo(){
@@ -12,7 +13,7 @@ function ToDo(){
     <div className="todo-task-container">
       <div className="custom-bullet-point">➣</div>
       <textarea value={task} rows={2} onChange={handleChange}/>
-      <button>X</button>
+      <DeleteButton />
     </div>
   )
 }
