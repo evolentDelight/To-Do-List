@@ -14,7 +14,7 @@ function ToDoWorkspace() {
   };
 
   const deleteAllTasks = () => {
-    setToDoList(<ToDo key={nextId} />);
+    setToDoList([<ToDo key={nextId} />]);
     nextId++; //update ID
   };
 
