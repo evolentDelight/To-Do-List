@@ -50,3 +50,12 @@
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
 }
+
+#delete-all {
+  background-color: rgb(255, 95, 95);
+  color: white;
+}
+
+#delete-all:hover {
+  background-color: rgb(255, 0, 0);
+}
