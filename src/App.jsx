@@ -1,5 +1,5 @@
-import './App.css'
-import MainList from "./components/MainList.jsx"
+import "./App.css";
+import ToDoWorkspace from "./components/ToDoWorkspace.jsx";
 
 function App() {
   return (
@@ -7,10 +7,10 @@ function App() {
       <h1 className="list-title">To Do</h1>
       <hr />
       <div className="list-actual-list">
-        <MainList />
+        <ToDoWorkspace />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
