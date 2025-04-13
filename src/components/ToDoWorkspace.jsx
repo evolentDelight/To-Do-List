@@ -5,23 +5,28 @@ import ButtonFeatures from "./ButtonFeatures.jsx";
 
 let nextId = 1;
 
-const addNewToDo = () => {
-  setToDoList((prevList) => {
-    [...prevList, <ToDo id={nextId} />];
-  });
-  nextId++; //update ID
-};
 function ToDoWorkspace() {
-  const [toDoList, setToDoList] = useState([<ToDo id={0} />]);
+  const [toDoList, setToDoList] = useState([<ToDo key={0} />]);
+
+  const addNewTask = () => {
+    setToDoList((prevList) => [...prevList, <ToDo key={nextId} />]);
+    nextId++; //update ID
+  };
+
+  const deleteAllTasks = () => {
+    setToDoList(<ToDo key={nextId} />);
+    nextId++; //update ID
+  };
+
   return (
     <div className="todo-overall-container">
-      <ButtonFeatures />
+      <ButtonFeatures addNewTask={addNewTask} deleteAllTasks={deleteAllTasks} />
       <div className="todo-list-container">{toDoList}</div>
     </div>
   );
 }
 
-export default MainList;
+export default ToDoWorkspace;
 
 /* Features
 Press Enter to create new Task
