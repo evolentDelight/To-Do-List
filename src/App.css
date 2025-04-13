@@ -1,9 +1,9 @@
-.list-main{
+.list-main {
   border-radius: 10px;
   overflow: hidden;
 }
 
-.list-title{
+.list-title {
   background-color: #144272;
   margin: 0;
 
@@ -14,17 +14,17 @@
   font-size: max(50px, 7vh);
 }
 
-hr{
+hr {
   margin: 0;
   border: 3px solid white;
 }
 
-ul{
+ul {
   margin: 0;
 }
 
-.list-actual-list{
+.list-actual-list {
   background-color: #205295;
   box-sizing: border-box;
-  padding-top: 2.5vh;
+  padding-top: 1em; /*bottom-gap done by ButtonFeatures.css .button-features-container*/
 }
