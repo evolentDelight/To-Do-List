@@ -6,24 +6,50 @@ import ButtonFeatures from "./ButtonFeatures.jsx";
 let nextId = 1;
 
 function ToDoWorkspace() {
-  const [toDoList, setToDoList] = useState([<ToDo key={0} />]);
+  const [tasks, setTasks] = useState([{ id: 0, toDoTask: "" }]);
 
   const addNewTask = () => {
-    setToDoList((prevList) => [...prevList, <ToDo key={nextId} />]);
+    setTasks((prevList) => [...prevList, { id: nextId, toDoTask: "" }]);
     nextId++; //update ID
+  };
+
+  const updateTask = (id, taskData) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return {
+          ...task,
+          toDoTask: taskData,
+        };
+      } else {
+        return task;
+      }
+    });
+
+    setTasks(updatedTasks);
   };
 
   const deleteAllTasks = () => {
-    setToDoList([<ToDo key={nextId} />]);
+    setTasks([{ id: nextId, toDoTask: "" }]);
     nextId++; //update ID
   };
 
-  const deleteSingleTask = (id) => {};
+  const deleteSingleTask = (id) => {
+    console.log(toDoList.filter());
+  };
 
   return (
     <div className="todo-overall-container">
       <ButtonFeatures addNewTask={addNewTask} deleteAllTasks={deleteAllTasks} />
-      <div className="todo-list-container">{toDoList}</div>
+      <div className="todo-list-container">
+        {tasks.map((task) => (
+          <ToDo
+            key={task.id}
+            id={task.id}
+            toDoTask={task.toDoTask}
+            updateTask={updateTask}
+          />
+        ))}
+      </div>
     </div>
   );
 }

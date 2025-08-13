@@ -2,17 +2,15 @@ import { useState } from "react";
 import SingleDeleteButton from "./SingleDeleteButton.jsx";
 import "./ToDo.css";
 
-function ToDo({ id }) {
-  const [task, setTask] = useState("");
-
+function ToDo({ id, toDoTask, updateTask }) {
   function handleChange(event) {
-    setTask(event.target.value);
+    updateTask(id, event.target.value);
   }
 
   return (
     <div className="todo-task-container" id={id}>
       <div className="custom-bullet-point">➣</div>
-      <textarea value={task} rows={2} onChange={handleChange} />
+      <textarea value={toDoTask} rows={2} onChange={handleChange} />
       <SingleDeleteButton />
     </div>
   );
