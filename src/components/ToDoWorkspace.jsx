@@ -18,6 +18,8 @@ function ToDoWorkspace() {
     nextId++; //update ID
   };
 
+  const deleteSingleTask = (id) => {};
+
   return (
     <div className="todo-overall-container">
       <ButtonFeatures addNewTask={addNewTask} deleteAllTasks={deleteAllTasks} />
