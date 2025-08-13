@@ -14,18 +14,18 @@ function ToDoWorkspace() {
   };
 
   const updateTask = (id, taskData) => {
-    const updatedTasks = tasks.map((task) => {
-      if (task.id === id) {
-        return {
-          ...task,
-          toDoTask: taskData,
-        };
-      } else {
-        return task;
-      }
-    });
-
-    setTasks(updatedTasks);
+    setTasks((prevList) =>
+      prevList.map((task) => {
+        if (task.id === id) {
+          return {
+            ...task,
+            toDoTask: taskData,
+          };
+        } else {
+          return task;
+        }
+      })
+    );
   };
 
   const deleteAllTasks = () => {
