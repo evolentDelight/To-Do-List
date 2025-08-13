@@ -1,12 +1,8 @@
 import "./SingleDeleteButton.css";
 
-export default function SingleDeleteButton() {
-  const handleSingleDeleteButton = () => {
-    console.log("hello");
-  };
-
+export default function SingleDeleteButton({ handleDelete }) {
   return (
-    <button class="bin-button" onClick={handleSingleDeleteButton}>
+    <button class="bin-button" onClick={handleDelete}>
       <svg
         class="bin-top"
         viewBox="0 0 39 7"

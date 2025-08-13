@@ -34,7 +34,12 @@ function ToDoWorkspace() {
   };
 
   const deleteSingleTask = (id) => {
-    console.log(toDoList.filter());
+    const newList = tasks.filter((task) => task.id != id);
+
+    if (newList.length === 0) {
+      setTasks([{ id: nextId, toDoTask: "" }]);
+      nextId++; //update ID
+    } else setTasks(newList);
   };
 
   return (
@@ -47,6 +52,7 @@ function ToDoWorkspace() {
             id={task.id}
             toDoTask={task.toDoTask}
             updateTask={updateTask}
+            deleteSingleTask={deleteSingleTask}
           />
         ))}
       </div>
@@ -57,8 +63,6 @@ function ToDoWorkspace() {
 export default ToDoWorkspace;
 
 /* Features
-Press Enter to create new Task
-
 Button in MainList:
   -Add New Task
   -Delete All Tasks
